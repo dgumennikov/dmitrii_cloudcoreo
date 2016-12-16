@@ -1,6 +1,6 @@
 variables:
-	DUMMY_VAR:
-		description: "test"
-		required: false
-		type: string
-		default:
+  DUMMY_VAR:
+    description: "test"
+    required: false
+    type: string
+    default:
