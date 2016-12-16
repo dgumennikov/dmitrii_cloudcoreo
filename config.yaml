@@ -1,17 +1,8 @@
+
 variables:
-  DUMMY_VAR:
-    description: "test"
-    required: false
-    type: string
-    default:
-  AUDIT_AWS_ELB_ALERT_RECIPIENT:
-    description: "Enter the email address(es) that will receive notifications. If more than one, separate each with a comma."
-    required: false
-    type: string
-    default:
   AUDIT_AWS_ELB_REGIONS:
     description: "List of AWS regions to check. Default is us-east-1,us-west-1,us-west-2,eu-west-1."
-      required: true
-      type: array
-      default:
-        - us-east-1
+    required: true
+    type: array
+    default:
+      - us-east-1
