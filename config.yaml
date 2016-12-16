@@ -10,9 +10,9 @@
 	##   internet_gateway true
 	## end
 	##
-
-DUMMY_VAR:
-	description: "test"
-	required: "false"
-	type: "string"
-	default: "nothing"
+variables:
+	DUMMY_VAR:
+		description: "test"
+		required: "false"
+		type: "string"
+		default: "nothing"
