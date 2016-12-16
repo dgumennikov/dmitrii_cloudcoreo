@@ -20,7 +20,7 @@ coreo_aws_advisor_alert "test_alert" do
 	category "Inventory"
 	suggested_action "None."
 	objectives ["load_balancers"]
-	audit_objects["load_balancer_description.health_check.interval"]
+	audit_objects ["load_balancer_description.health_check.interval"]
 	operators [">"]
 	alert_when [120]
 end
