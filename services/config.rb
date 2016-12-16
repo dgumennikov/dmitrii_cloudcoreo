@@ -42,5 +42,5 @@ end
 coreo_aws_advisor_ec2 "advise-ec2" do
   action :advise
   alerts ${"ec2_snapshots"}
-  regions ${AUDIT_AWS_EC2_REGIONS}
+  regions ${AUDIT_AWS_ELB_REGIONS}
 end
