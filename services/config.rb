@@ -30,11 +30,17 @@ coreo_aws_advisor_alert "ec2_snapshots" do
 	service :ec2
 	display_name "EC2 snaphots check"
 	description "This cehck finds out all shapshots that take more than 256gb and are not encrypted"
-	level "Informational"
+	level "Warning"
 	category "Inventory"
 	suggested_action "None"
 	objectives ["snapshots", "snapshots"]
 	audit_objects ["snapshot_set.volume_size", "snapshot_set.encrypted"]
 	operators [">", "=="]
 	alert_when [8, false]
+end
+
+coreo_aws_advisor_ec2 "advise-ec2" do
+  action :advise
+  alerts ${"ec2_snapshots"}
+  regions ${AUDIT_AWS_EC2_REGIONS}
 end
