@@ -18,9 +18,23 @@ coreo_aws_advisor_alert "test_alert" do
 	description "This check finds out what load balancers have healthcheck intervals > 2 mins"
 	level "Informational"
 	category "Inventory"
-	suggested_action "None."
+	suggested_action "None"
 	objectives ["load_balancers"]
 	audit_objects ["load_balancer_description.health_check.interval"]
 	operators [">"]
 	alert_when [120]
+end
+
+coreo_aws_advisor_alert "ec2_snapshots" do
+	action :define
+	service :ec2
+	display_name "EC2 snaphots check"
+	description "This cehck finds out all shapshots that take more than 256gb and are not encrypted"
+	level "Informational"
+	category "Inventory"
+	suggested_action "None"
+	objectives ["snapshots"]
+	audit_objects ["snapshot_set.volume_size", "snapshot_set.encrypted"]
+	operators [">", "=="]
+	alert_when [8, false]
 end
